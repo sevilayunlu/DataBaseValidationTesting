@@ -1,6 +1,7 @@
 package com.library.steps;
 
 import com.library.utility.ConfigurationReader;
+import com.library.utility.DB_Util;
 import com.library.utility.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -11,6 +12,27 @@ import org.openqa.selenium.TakesScreenshot;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
+
+    @Before("@db")
+    public void setupDB(){
+        DB_Util.createConnection();
+        System.out.println("connecting to database.....");
+
+    }
+
+    @After("@db")
+    public void destroyDB(){
+        DB_Util.destroy();
+        System.out.println("closing connection....");
+
+    }
+
+
+
+
+
+
+
 
     @Before
     public void setUp(){
