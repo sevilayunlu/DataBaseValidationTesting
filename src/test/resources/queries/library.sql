@@ -3,7 +3,8 @@ from users;-- actual
 
 
 select count(distinct id)
-from users; -- expected
+from users;
+-- expected
 
 
 -- us01-2
@@ -51,6 +52,22 @@ from books;
 select *
 from book_categories;
 
-select * from books
-where name in ('Head First Java ','The Scrum Field Guide');
+select *
+from books
+where name in ('Head First Java ', 'The Scrum Field Guide');
+
+select name
+from books
+where name = 'Self Confidence';
+
+-- us08
+select *
+from users;
+
+select status, count(*)
+from users
+group by status;
+
+
+
 
