@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class UsersPage extends BasePage {
 
     @FindBy(id="user_status")
-    public WebElement statusDropdown;
+    public WebElement statusDropDown;
 
     @FindBy(className="dataTables_info")
     private WebElement userCount;
