@@ -28,6 +28,7 @@ public class UserStepDefs {
     public void execute_query_to_get_all_ı_ds_from_users() {
         String query = "select count(id) from users";
         DB_Util.runQuery(query);
+        BrowserUtil.waitFor(3);
 
         actualCount = DB_Util.getFirstRowFirstColumn();
         System.out.println("actualCount = " + actualCount);
@@ -90,7 +91,7 @@ public class UserStepDefs {
     @When("the gets number of users")
     public void the_gets_number_of_users() {
         BrowserUtil.waitFor(3);
-        actualCount = usersPage.getUserCount();
+        actualCounts = usersPage.getUserCount();
         System.out.println(usersPage.getUserCount());
 
     }
